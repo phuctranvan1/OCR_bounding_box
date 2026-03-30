@@ -842,7 +842,7 @@ class OCRApp(tk.Tk):
         except Exception as exc:
             self.after(
                 0,
-                lambda: (
+                lambda exc=exc: (
                     messagebox.showerror("OCR Error", str(exc)),
                     self._status_var.set("OCR failed."),
                     self._ocr_progress.stop(),
